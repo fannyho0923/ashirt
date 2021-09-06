@@ -2,12 +2,14 @@
   <div class="topBanner">
     <ul class="cart">
       <li>
-        <a href="">
+        <a class="cartLpt" href="">
+          <img src="../assets/info.png" alt="" />
           <span>購物須知</span>
         </a>
       </li>
       <li>
-        <a href="">
+        <a class="cartRpt" href="">
+          <img src="../assets/cart.png" alt="" />
           <span>購物車</span>
         </a>
       </li>
@@ -73,6 +75,9 @@ a {
   font-size: 18px;
   color: #000;
 }
+img {
+  vertical-align: top;
+}
 /* banner body */
 .topBanner {
   /* background-color: blue; */
@@ -111,9 +116,27 @@ a {
 }
 .itemsNav {
   display: flex;
-  text-align: center;
+  justify-content: center;
 }
 .itemsUl {
   display: flex;
+}
+input {
+  /* 去除未選中狀態邊框 */
+  border: 0;
+  /* 去除選中狀態邊框 */
+  outline: none;
+  /* 透明背景 */
+  background-color: rgba(0, 0, 0, 0);
+}
+.cartLpt {
+  padding: 0 5px 0 40px;
+  color: white;
+  background-color: black;
+}
+.cartRpt {
+  padding: 0 5px 0 40px;
+  color: white;
+  background-color: black;
 }
 </style>
