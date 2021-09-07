@@ -4,13 +4,13 @@
       <li>
         <a class="cartLpt" href="">
           <img src="../assets/info.png" alt="" />
-          <span>購物須知</span>
+          <span class="cartText">購物須知</span>
         </a>
       </li>
       <li>
         <a class="cartRpt" href="">
           <img src="../assets/cart.png" alt="" />
-          <span>購物車</span>
+          <span class="cartText">購物車</span>
         </a>
       </li>
     </ul>
@@ -53,6 +53,7 @@
     </nav>
     <div class="searchBar">
       <input type="text" placeholder="請輸入關鍵字" />
+      <a class="searchBtn" href=""></a>
     </div>
   </div>
 </template>
@@ -92,13 +93,19 @@ img {
   top: 0;
   display: flex;
 }
+.cartText {
+  margin-left: 5px;
+}
 /* 使用者輸入框 */
 .searchBar {
   position: absolute;
-  bottom: 30px;
+  bottom: 0;
   right: 15px;
   background: #f2f2f2;
   padding: 0 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
 }
 /* 照片容器 */
 .imgBox {
@@ -128,15 +135,41 @@ input {
   outline: none;
   /* 透明背景 */
   background-color: rgba(0, 0, 0, 0);
+  height: 40px;
 }
 .cartLpt {
-  padding: 0 5px 0 40px;
+  padding: 0 5px 0 0 5px;
   color: white;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 38px;
+  padding: 0 5px 0 10px;
+  font-size: 16px;
+  margin: 0 7px;
 }
 .cartRpt {
-  padding: 0 5px 0 40px;
+  padding: 0 5px 0 10px;
   color: white;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 38px;
+  padding: 0 5px 0 10px;
+  font-size: 16px;
+  margin: 0 7px;
+}
+li + li {
+  margin-left: 2rem;
+}
+.searchBtn {
+  display: inline-block;
+  background-image: url("../assets/searchPic.png");
+  height: 20px;
+  padding-left: 22px;
+  width: 0;
+  overflow: hidden;
 }
 </style>

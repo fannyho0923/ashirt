@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <Header />
+    <Banner />
+    <!-- <ClearFix /> -->
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
+import Banner from "./components/Banner";
 
 export default {
   name: "App",
   components: {
-    Header
+    Header,
+    Banner
   }
 };
 </script>
