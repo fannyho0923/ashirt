@@ -1,24 +1,26 @@
 <template>
   <div class="container">
     <div class="body">
-      <div class="copyRight">
-        Copyrights © 2016
-        <b>有間衣店男裝服飾</b> All Rights Reserved.
+      <div class="lpt">
+        <div class="copyRight">
+          Copyrights © 2016
+          <b>有間衣店男裝服飾</b> All Rights Reserved.
+        </div>
+        <div class="siteInfo">
+          <ul>
+            <li class="tel">
+              <label for="">電話</label>
+              0955-796582
+            </li>
+            <li class="address">
+              <label for="">地址</label>
+              ashirt520418@gmail.com
+            </li>
+            <li class="time">週一至週五 10:00-12:00 / 13:30-18:00</li>
+          </ul>
+        </div>
       </div>
-      <div class="siteInfo">
-        <ul>
-          <li class="tel">
-            <label for="">電話</label>
-            0955-796582
-          </li>
-          <li class="address">
-            <label for="">地址</label>
-            ashirt520418@gmail.com
-          </li>
-          <li class="time">週一至週五 10:00-12:00 / 13:30-18:00</li>
-        </ul>
-      </div>
-      <div class="powered">
+      <div class="rpt">
         <a href="">RWD響應式網站設計</a>
       </div>
     </div>
@@ -45,11 +47,15 @@ label {
   display: flex;
   width: 85%;
   margin: 0 auto;
+  justify-content: space-between;
+}
+.lpt {
+  display: flex;
 }
 .siteInfo {
   display: flex;
   margin-left: 2rem;
-  width: 45%;
+  width: fit-content;
   justify-content: space-evenly;
 }
 .tel::before {
@@ -66,11 +72,5 @@ ul {
 a {
   text-decoration: none;
   color: #7d7d7d;
-}
-.powered {
-  width: 25%;
-  text-align: right;
-  /* float: right;
-  text-align: right; */
 }
 </style>
