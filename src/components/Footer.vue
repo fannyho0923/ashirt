@@ -69,6 +69,9 @@ ul {
   display: flex;
   justify-content: space-evenly;
 }
+li + li {
+  margin-left: 1rem;
+}
 a {
   text-decoration: none;
   color: #7d7d7d;
