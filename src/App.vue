@@ -2,19 +2,24 @@
   <div id="app">
     <Header />
     <Banner />
-    <!-- <ClearFix /> -->
+    <Content />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
 import Banner from "./components/Banner";
+import Content from "./components/Content";
+import Footer from "./components/Footer";
 
 export default {
   name: "App",
   components: {
     Header,
-    Banner
+    Banner,
+    Content,
+    Footer
   }
 };
 </script>
