@@ -30,7 +30,9 @@ img {
   width: 100%;
 }
 .links {
-  padding: 1rem 0;
+  display: flex;
+  padding: 1.5rem 0;
+  justify-content: space-between;
 }
 .link {
   display: inline-block;
@@ -41,12 +43,16 @@ img {
   background: url("../assets/fishIcon.png") 0 center no-repeat;
   transition: all 0.3s ease;
 }
+.link:hover {
+  color: #888;
+  padding-left: 50px;
+}
 .iconImg {
   height: 100%;
 }
 @media (min-width: 992px) {
   .link {
-    width: 20%;
+    width: 25%;
   }
 }
 </style>
