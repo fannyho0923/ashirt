@@ -19,7 +19,42 @@
         :name="clothes.name[index]"
       />
     </div>
-    <!-- <img :src="clothes.imgs[2]" alt="" /> -->
+    <!-- 褲系 -->
+    <SubLinks :prop="jeans" />
+    <div class="products">
+      <Products
+        class="p"
+        v-for="(item, index) in jeans.imgs"
+        :key="index"
+        :imgUrl="jeans.imgs[index]"
+        :cost="jeans.cost[index]"
+        :name="jeans.name[index]"
+      />
+    </div>
+    <!-- 鞋類 -->
+    <SubLinks :prop="shoes" />
+    <div class="products">
+      <Products
+        class="p"
+        v-for="(item, index) in shoes.imgs"
+        :key="index"
+        :imgUrl="shoes.imgs[index]"
+        :cost="shoes.cost[index]"
+        :name="shoes.name[index]"
+      />
+    </div>
+    <!-- 品牌誌 -->
+    <SubLinks :prop="brand" />
+    <div class="products">
+      <Products
+        class="p"
+        v-for="(item, index) in brand.imgs"
+        :key="index"
+        :imgUrl="brand.imgs[index]"
+        :cost="brand.cost[index]"
+        :name="brand.name[index]"
+      />
+    </div>
     <!-- 底部banner -->
     <div class="bottomBanner">
       <a href="">
@@ -40,6 +75,84 @@ export default {
         title: ["CLOTHES", "上衣"],
         info: ["TEE", "襯衫", "大學服", "外套"],
         colors: ["#5580b5", "#8baad1"],
+        imgs: [
+          require("../assets/c1.jpeg"),
+          require("../assets/c2.jpeg"),
+          require("../assets/c3.jpeg"),
+          require("../assets/c4.jpeg"),
+          require("../assets/c5.jpeg"),
+          require("../assets/c6.jpeg"),
+          require("../assets/c7.jpeg"),
+          require("../assets/c8.jpeg")
+        ],
+        name: [
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289"
+        ],
+        cost: [390, 390, 390, 390, 390, 390, 390, 390]
+      },
+      jeans: {
+        title: ["PANTS", "褲系"],
+        info: ["牛仔褲", "休閒褲", "運動褲", "短褲"],
+        colors: ["#4aa4a5", "#8ecdcd"],
+        imgs: [
+          require("../assets/c1.jpeg"),
+          require("../assets/c2.jpeg"),
+          require("../assets/c3.jpeg"),
+          require("../assets/c4.jpeg"),
+          require("../assets/c5.jpeg"),
+          require("../assets/c6.jpeg"),
+          require("../assets/c7.jpeg"),
+          require("../assets/c8.jpeg")
+        ],
+        name: [
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289"
+        ],
+        cost: [390, 390, 390, 390, 390, 390, 390, 390]
+      },
+      shoes: {
+        title: ["SHOES", "鞋類"],
+        info: ["帆布鞋", "運動鞋", "休閒鞋", "涼鞋"],
+        colors: ["#b55560", "#d3717c"],
+        imgs: [
+          require("../assets/c1.jpeg"),
+          require("../assets/c2.jpeg"),
+          require("../assets/c3.jpeg"),
+          require("../assets/c4.jpeg"),
+          require("../assets/c5.jpeg"),
+          require("../assets/c6.jpeg"),
+          require("../assets/c7.jpeg"),
+          require("../assets/c8.jpeg")
+        ],
+        name: [
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289",
+          "秋季新款拼接格子長袖襯衣11935289"
+        ],
+        cost: [390, 390, 390, 390, 390, 390, 390, 390]
+      },
+      brand: {
+        title: ["BRAND", "品牌誌"],
+        info: ["RED重磅古著", "工裝MADEN", "米格薯叔", "復古皮具"],
+        colors: ["#4aa4a5", "#8ecdcd"],
         imgs: [
           require("../assets/c1.jpeg"),
           require("../assets/c2.jpeg"),

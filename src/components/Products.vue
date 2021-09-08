@@ -34,6 +34,7 @@ a {
 }
 .top {
   padding: 15px;
+  overflow: hidden;
 }
 .bottom {
   padding: 15px;
@@ -58,6 +59,10 @@ a {
 .img {
   width: 100%;
   height: auto;
+  transition: all 0.25s linear;
+}
+.img:hover {
+  transform: scale(1.2, 1.2);
 }
 .btn {
   position: relative;
