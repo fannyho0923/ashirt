@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div @click.prevent="goGoods" class="card">
     <a href="">
       <div class="top">
         <img class="img" :src="imgUrl" alt="" />
@@ -22,7 +22,22 @@ export default {
   props: {
     imgUrl: { type: String },
     cost: { type: Number },
-    name: { type: String }
+    name: { type: String },
+    color: { type: Array }
+  },
+  methods: {
+    goGoods() {
+      var arr = {
+        name: this.name,
+        cost: this.cost,
+        imgUrl: this.imgUrl,
+        color: this.color
+      };
+      arr = JSON.stringify(arr);
+      // console.log(arr);
+      localStorage.setItem("goodInfo", arr);
+      this.$router.push("/goods");
+    }
   }
 };
 </script>
@@ -81,7 +96,6 @@ a {
   background-repeat: no-repeat;
   background-position: center center;
   padding: 0;
-
   background-image: url("../assets/like.png");
 }
 

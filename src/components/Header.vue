@@ -8,9 +8,11 @@
         </a>
       </li>
       <li>
-        <a class="cartRpt" href="">
+        <a class="cartRpt" @click.prevent="goCart" href="">
           <img src="../assets/cart.png" alt="" />
-          <span class="cartText">購物車</span>
+          <span class="cartText"
+            >購物車<span class="count">{{ change }}</span></span
+          >
         </a>
       </li>
     </ul>
@@ -60,11 +62,38 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  props: {
+    changing: {
+      type: Number
+    }
+  },
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      count: 0
     };
+  },
+  created() {
+    if (localStorage.getItem("cartCount")) {
+      this.count = JSON.parse(localStorage.getItem("cartCount"));
+      this.count = Number(this.cartCount);
+    }
+  },
+  computed: {
+    change() {
+      if (JSON.parse(localStorage.getItem("cartCount"))) {
+        return JSON.parse(localStorage.getItem("cartCount"));
+      } else if (!isNaN(this.changing)) {
+        return this.changing;
+      } else {
+        console.log("ppp");
+        return this.count;
+      }
+    }
+  },
+  methods: {
+    goCart() {
+      this.$router.push("/cart").catch(() => {});
+    }
   }
 };
 </script>
@@ -150,6 +179,7 @@ input {
   margin: 0 7px;
 }
 .cartRpt {
+  position: relative;
   padding: 0 5px 0 10px;
   color: white;
   background-color: black;
@@ -171,5 +201,20 @@ li + li {
   padding-left: 22px;
   width: 0;
   overflow: hidden;
+}
+.count {
+  position: absolute;
+  left: 29px;
+  top: 0;
+  background-color: #eb0f0f;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #fff;
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: normal;
 }
 </style>

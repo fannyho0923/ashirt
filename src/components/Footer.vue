@@ -40,7 +40,6 @@ label {
   font-size: 12px;
   background-color: black;
   color: white;
-
   padding: 1.5rem 0 2rem 0;
 }
 .body {
