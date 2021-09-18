@@ -150,7 +150,7 @@ export default {
       currentSize: "",
       currentColor: "",
       num: 1,
-      buyArr: null,
+      buyArr: [],
       isChang: 0
     };
   },
@@ -187,8 +187,8 @@ export default {
             perCost: this.cost,
             cost: this.cost * this.num,
             imgUrl: this.imgUrl,
-            color: this.color,
-            size: this.size,
+            color: this.currentColor,
+            size: this.currentSize,
             num: this.num
           }
         ];
@@ -199,7 +199,7 @@ export default {
           this.buyArr.push(nowBuyArr);
         }
         var setArr = JSON.stringify(this.buyArr);
-        localStorage.setItem("buyArr", setArr);
+        localStorage.setItem("allGoods", setArr);
         if (localStorage.getItem("cartCount")) {
           this.cartCount = JSON.parse(localStorage.getItem("cartCount"));
           this.cartCount = Number(this.cartCount);
@@ -217,16 +217,15 @@ export default {
         this.currentSize = "";
         this.currentColor = "";
         this.num = 1;
+        window.location.reload();
         return;
       }
     },
     likeGoods() {
       this.likeCount = localStorage.getItem("likes");
-      // console.log(this.likeCount);
     },
     addColor(c) {
       this.currentColor = c;
-      // console.log(this.currentColor);
     },
     addSize(s) {
       switch (s) {
@@ -243,7 +242,6 @@ export default {
           this.currentSize = "2XL";
           break;
       }
-      console.log(this.currentSize);
     }
   }
 };

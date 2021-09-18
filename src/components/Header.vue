@@ -19,43 +19,45 @@
     <div class="imgBox">
       <a class="imgLink" href=""></a>
     </div>
-    <nav class="itemsNav">
-      <ul class="itemsUl">
-        <li>
-          <a href=""><span>首頁</span></a>
-        </li>
-        <li>
-          <a href=""><span>品牌誌</span></a>
-        </li>
-        <li>
-          <a href=""><span>最新商品</span></a>
-        </li>
-        <li>
-          <a href=""><span>上裝</span></a>
-        </li>
-        <li>
-          <a href=""><span>下裝</span></a>
-        </li>
-        <li>
-          <a href=""><span>鞋子</span></a>
-        </li>
-        <li>
-          <a href=""><span>包包</span></a>
-        </li>
-        <li>
-          <a href=""><span>配件</span></a>
-        </li>
-        <li>
-          <a href=""><span>訂單查詢</span></a>
-        </li>
-        <li>
-          <a href=""><span>鞋子</span></a>
-        </li>
-      </ul>
-    </nav>
-    <div class="searchBar">
-      <input type="text" placeholder="請輸入關鍵字" />
-      <a class="searchBtn" href=""></a>
+    <div class="rwd">
+      <nav class="itemsNav">
+        <ul class="itemsUl">
+          <li class="li">
+            <a href=""><span>首頁</span></a>
+          </li>
+          <li class="li">
+            <a href=""><span>品牌誌</span></a>
+          </li>
+          <li class="li">
+            <a href=""><span>最新商品</span></a>
+          </li>
+          <li class="li">
+            <a href=""><span>上裝</span></a>
+          </li>
+          <li class="li">
+            <a href=""><span>下裝</span></a>
+          </li>
+          <li class="li">
+            <a href=""><span>鞋子</span></a>
+          </li>
+          <li class="li">
+            <a href=""><span>包包</span></a>
+          </li>
+          <li class="li">
+            <a href=""><span>配件</span></a>
+          </li>
+          <li class="li">
+            <a href=""><span>訂單查詢</span></a>
+          </li>
+          <li class="li">
+            <a href=""><span>鞋子</span></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="searchBar">
+        <input type="text" placeholder="請輸入關鍵字" />
+        <a class="searchBtn" href=""></a>
+      </div>
     </div>
   </div>
 </template>
@@ -66,11 +68,6 @@ export default {
     changing: {
       type: Number
     }
-  },
-  data() {
-    return {
-      count: 0
-    };
   },
   created() {
     if (localStorage.getItem("cartCount")) {
@@ -85,8 +82,7 @@ export default {
       } else if (!isNaN(this.changing)) {
         return this.changing;
       } else {
-        console.log("ppp");
-        return this.count;
+        return 0;
       }
     }
   },
@@ -127,9 +123,10 @@ img {
 }
 /* 使用者輸入框 */
 .searchBar {
-  position: absolute;
-  bottom: 0;
-  right: 15px;
+  /* position: absolute;
+  bottom: 0; */
+  /* right: 15px; */
+  float: right;
   background: #f2f2f2;
   padding: 0 10px;
   display: flex;
@@ -216,5 +213,13 @@ li + li {
   height: 20px;
   text-align: center;
   line-height: normal;
+}
+.rwd {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 </style>
